@@ -162,6 +162,7 @@ public String toString()
   return "Dati Biglietto { "+
           " Km: "+km+
           " Età: "+etaPasseggero+
+          " Data scadenza:"+calcolaDataScadenza()+
           " Prezzo: "+ calcolaPrezzo().setScale(2, RoundingMode.HALF_EVEN)+" euro."
           +'}';
 
