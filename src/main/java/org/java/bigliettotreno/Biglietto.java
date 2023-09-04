@@ -63,11 +63,11 @@ public BigDecimal calcolaPrezzoFinalConEventualeSconto() {
 
     if (etaPasseggero < 18)
     {
-        prezzoFinale = calcolaPrezzoStandard().subtract(calcolaPrezzoStandard().multiply(SCONTO_UNDER_18));
+        prezzoFinale = prezzoFinale.subtract(prezzoFinale.multiply(SCONTO_UNDER_18));
 
     } else if (etaPasseggero > 65)
     {
-        prezzoFinale = calcolaPrezzoStandard().subtract(calcolaPrezzoStandard().multiply(SCONTO_OVER_65));
+        prezzoFinale = prezzoFinale.subtract(prezzoFinale.multiply(SCONTO_OVER_65));
     }
 
    return prezzoFinale;
@@ -78,10 +78,7 @@ private BigDecimal calcolaPrezzoStandard()
 {
 
 
-    BigDecimal prezzoStandard = BigDecimal.valueOf(km).multiply(PREZZO_PER_KM);
-
-
-  return prezzoStandard;
+    return BigDecimal.valueOf(km).multiply(PREZZO_PER_KM);
 
 }
 

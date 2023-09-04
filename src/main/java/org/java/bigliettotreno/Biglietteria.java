@@ -11,18 +11,25 @@ public class Biglietteria {
         Scanner sc = new Scanner(System.in);
 
         while(biglietto == null){
-        System.out.println("Inserisci numero km da percorrere: ");
-        int kmInput = Integer.parseInt(sc.nextLine());
-        System.out.println("Inserisci età passeggero: ");
-        int etaInput = Integer.parseInt(sc.nextLine());
 
-        try
+            try
         {
+            System.out.println("Inserisci numero km da percorrere: ");
+            int kmInput = Integer.parseInt(sc.nextLine());
+            System.out.println("Inserisci età passeggero: ");
+            int etaInput = Integer.parseInt(sc.nextLine());
+
             biglietto = new Biglietto(kmInput,etaInput);
             System.out.println(biglietto);
 
         }
-        catch(IllegalArgumentException e)
+            catch (NumberFormatException e)
+            {
+                System.out.println("Inserisci dei numeri.");
+
+            }
+
+            catch(IllegalArgumentException e)
         {
             System.out.println(e.getMessage());
 
